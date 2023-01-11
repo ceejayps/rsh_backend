@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staffs",
+  "info": {
+    "name": "staffs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Female",
+        "Male"
+      ]
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "subjects": {
+      "via": "tutor",
+      "collection": "curriculum"
+    },
+    "bio": {
+      "type": "text"
+    }
+  }
+}
