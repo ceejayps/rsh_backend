@@ -1,0 +1,30 @@
+version: '3'
+services:
+  app:
+    build:
+        context: .
+        args:
+            NODE_VERSION: 14
+    working_dir: /app
+    ports:
+      - "1876:1876"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+      - public:/app/public
+      - node_modules:/app/node_modules
+    command: sh -c "npm install --only=production && npm start"
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  public:
+  mongo-data:
+  node_modules:
