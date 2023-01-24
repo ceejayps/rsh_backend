@@ -48,6 +48,13 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "subject",
+        "skill"
+      ]
     }
   }
 }
