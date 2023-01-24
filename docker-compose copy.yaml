@@ -1,0 +1,8 @@
+version: "3"
+services:
+  server:
+    container_name: game_server
+    build:
+      dockerfile: dockerfile
+    ports: 
+      - 1876:1876
