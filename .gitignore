@@ -59,6 +59,10 @@ $RECYCLE.BIN/
 *.swm
 *.out
 *.pid
+*.pem
+*.PEM
+*.key
+
 
 
 ############################
